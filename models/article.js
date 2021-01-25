@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const articleSchema = new mongoose.Schema({
-  keyword: {
+  keyWord: {
     type: String,
     required: [true, 'Требуется хотя бы одно ключевое слово!'],
   },

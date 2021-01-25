@@ -27,10 +27,10 @@ module.exports.deleteArticleById = (req, res, next) => {
 
 module.exports.createArticle = (req, res) => {
   const {
-    keyword, title, text, date, source, link, image,
+    keyWord, title, text, date, source, link, image,
   } = req.body;
   Article.create({
-    keyword, title, text, date, source, link, image, owner: req.user._id,
+    keyWord, title, text, date, source, link, image, owner: req.user._id,
   })
     .then((article) => article.populate('owner').execPopulate())
     .then((article) => res.send(article));

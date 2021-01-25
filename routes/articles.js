@@ -9,8 +9,8 @@ articlesRoutes.get('/articles', getArticles);
 
 articlesRoutes.post('/articles', celebrate({
   body: Joi.object().keys({
-    title: Joi.string().required().min(2).max(30),
-    keyword: Joi.string().required(),
+    title: Joi.string().required().min(2),
+    keyWord: Joi.string().required(),
     text: Joi.string().required(),
     date: Joi.string().required(),
     source: Joi.string().required(),
