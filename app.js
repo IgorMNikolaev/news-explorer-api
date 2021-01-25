@@ -15,7 +15,7 @@ const centralError = require('./middlewares/centralError');
 const limiter = require('./utils/limiter');
 
 const app = express();
-const { PORT = 3001 } = process.env;
+const { PORT = 3000 } = process.env;
 
 mongoose.connect(DATA_BASE, {
   useNewUrlParser: true,
