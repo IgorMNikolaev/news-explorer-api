@@ -12,7 +12,6 @@ const { DATA_BASE = 'mongodb://localhost:27017/newsdb' } = process.env;
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const centralError = require('./middlewares/centralError');
-const limiter = require('./utils/limiter');
 
 const app = express();
 const { PORT = 3000 } = process.env;
@@ -38,7 +37,6 @@ app.use((req, res, next) => {
 app.use('*', cors());
 
 app.use(helmet());
-// app.use(limiter);
 
 app.use(requestLogger);
 app.use(router);
