@@ -4,7 +4,6 @@ const ForbiddenError = require('../errors/forb-error');
 
 module.exports.getArticles = (req, res, next) => {
   Article.find({ owner: req.user._id })
-    .orFail(new NotFoundError('Статьи не найдены'))
     .then((articles) => res.send(articles))
     .catch(next);
 };
